@@ -2,69 +2,70 @@
 
 const canvasEl = document.getElementById('chart');
 const buttonEl = document.getElementById('result-button');
-const goatImageEl = document.getElementById('goat-images');
-const goats = ['cruisin-goat.jpg', 'float-your-goat.jpg', 'goat-away.jpg', 'goat-logo.png', 'goat-out-of-hand.jpg', 'kissing-goat.jpg', 'sassy-goat.jpg', 'smiling-goat.jpg', 'sweater-goat.jpg'];
+const petImageEl = document.getElementById('pet-images');
+const pet = ['assets/dog1.jpg', 'dog2.jpg', 'dog3.jpg', 'dog4.png', 'dog5.jpg', 'cat1.jpg', 'cat2.jpg', 'cat3.jpg', 'cat4.jpg', 'bird1.jpg', 'bird2.jpg', 'bird3.jpg', 'bird4.jpg'];
 
 const allGoatImages = [];
 let rounds = 5;
 let chart = null;
 
-function GoatImage(name, url) {
+function PetImage(name, url) {
   this.name = name;
   this.url = `images/${url}`;
   this.clicks = 0;
   this.timesSeen = 0;
 }
 
-function getRandomGoat() {
+function getRandomPet() {
   // return an index of a goatImage in allGoatImages
-  return Math.floor(Math.random() * allGoatImages.length);
+  return Math.floor(Math.random() * allPetImages.length);
 }
 
 // render images onto our HTML
 function render() {
   let img1El = document.getElementById('img1');
   let img2El = document.getElementById('img2');
+  let img3El = document.getElementById('img3');
+  let first = getRandomPet();
+  let second = getRandomPet();
+  let third = getRandomPet();
 
-  let first = getRandomGoat();
-  let second = getRandomGoat();
-
-  while (second === first) {
-    second = getRandomGoat();
+  while (second === first,third) {
+    second = getRandomPet();
   }
 
   console.log(first, second);
-  let goat1 = allGoatImages[first];
-  let goat2 = allGoatImages[second];
+  let dog1 = allPetImages[first];
+  let dog2 = allPetImages[second];
 
   console.log(img1El, img2El);
-  img1El.src = goat1.url;
-  img2El.src = goat2.url;
-  img1El.name = goat1.name;
-  img2El.name = goat2.name;
-  goat1.timesSeen++;
-  goat2.timesSeen++;
+  img1El.src = dog1.url;
+  img2El.src = dog2.url;
+  img1El.name = dog1.name;
+  img2El.name = dog2.name;
+  dog1.timesSeen++;
+  dog2.timesSeen++;
 }
 
 // add 1 to that goats click count.
 function handleClick(event) {
   console.log(event.target);
   // determine which goat was clicked.
-  let goatName = event.target.name;
+  let petName = event.target.name;
 
   // forEach method on an array, 
-  allGoatImages.forEach(function (goat) {
-    if (goat.name === goatName) {
-      goat.clicks++;
+  allGoatImages.forEach(function (pet) {
+    if (pet.name === petName) {
+      pet.clicks++;
     }
   });
   rounds--;
   if (!rounds) {
-    goatImageEl.removeEventListener('click', handleClick);
+    petImageEl.removeEventListener('click', handleClick);
     // show me the button!
     buttonEl.style.display = 'inline';
   }
-  console.log(allGoatImages);
+  console.log(allPetImages);
   render();
 }
 
@@ -76,10 +77,10 @@ function handleResults(event) {
   let nameValues = [];
 
   // find the data for our chart.
-  for (let i =0; i < allGoatImages.length; i++) {
-    nameValues.push(allGoatImages[i].name);
-    clickData.push(allGoatImages[i].clicks);
-    viewData.push(allGoatImages[i].timesSeen);
+  for (let i =0; i < allPetImages.length; i++) {
+    nameValues.push(allPetImages[i].name);
+    clickData.push(allPetImages[i].clicks);
+    viewData.push(allPetImages[i].timesSeen);
   }
 
   // draw our chart
@@ -114,12 +115,12 @@ function updateChart(dataSetName, data) {
 }
 
 for (let i = 0; i < goats.length; i++) {
-  let goatImage = new GoatImage(goats[i].slice(0, goats[i].length - 4), goats[i]);
-  allGoatImages.push(goatImage);
+  let goatImage = new GoatImage(pet[i].slice(0, pet[i].length - 13), pet[i]);
+  allPetImages.push(petImage);
 }
 
-console.log(allGoatImages);
+console.log(allPetImages);
 render();
 
-goatImageEl.addEventListener('click', handleClick);
+petImageEl.addEventListener('click', handleClick);
 buttonEl.addEventListener('click', handleResults);
