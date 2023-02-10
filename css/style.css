@@ -78,3 +78,10 @@ header h1 {
     text-align: center;
     margin: 10px auto;
 }
+footer {
+    background-color: #34384e;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: #ffffff;
+    height: 80px;
+}
