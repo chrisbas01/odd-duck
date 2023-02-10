@@ -1,28 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <title>Click Tracking</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/goats.css">
-</head>
-<body>
-  <header>
-    <h1>Click Tracking</h1>
-  </header>
-  <main>
-    <div id="pet-images">
-      <img  id="img1" src="" alt="">
-      <img  id="img2" src="" alt="">
-      <img  id="img3" src="" alt="">
 
-    </div>
-    <canvas id="chart"></canvas>
-    <button id="result-button">View Results</button>
-  </main>
-  <script src="assets/app.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+    <title>Odd Duck</title>
+</head>
+
+<body>
+    <header>
+        <h1>Odd Duck Products</h1>
+    </header>
+    <main>
+        <section id="voting-img-containers">
+        </section>
+        <section id="product-container">
+
+        </section>
+        <section id="button-container">
+            <button id="results-button">View Results</button>
+            <button id="clear-data-button">Clear Data</button>
+        </section>
+
+        <canvas id="chart">
+        </canvas>
+
+    </main>
+    <footer></footer>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

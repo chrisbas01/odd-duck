@@ -1,0 +1,80 @@
+body {
+    background-color: #a4dcf4;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+header {
+    background-color: #34384e;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: #ffffff;
+}
+
+header h1 {
+    font-family:fantasy;
+    text-shadow: 5px 10px 10px rgba(251, 248, 248, 0.75),
+    -3px 10px 12px rgba(0, 0, 0, 0.75);
+    font-size: 2.5rem;
+    margin: 30px;
+    color: #FEFAE0;
+}
+
+#voting-img-containers {
+    text-align: center;
+    margin: 100px auto;
+    font-size: larger;
+    
+}
+
+#product-container {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-displayed {
+    height: 300px;
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 10px;
+    border: 2px solid #0e197f;
+    transition: 500ms;
+    box-shadow: 0 40px 63px -60px #132A13;
+    cursor: pointer;
+}
+
+.products-displayed:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 80px 63px -60px #132A13;
+}
+
+.products-displayed:active {
+    transform: translateY(5px);
+    box-shadow: 0 40px 63px -60px #132A13;
+}
+
+#button-container {
+    margin: 100px auto;
+    text-align: center;
+}
+
+#button-container button {
+   display: inline-block;
+   margin-right: 50px;
+   margin-left: 50px;
+    padding: 8px;
+    border-radius: 5px;
+    border-color: #04186f;
+    background-color: #6045cb;
+    color: #DAD7CD;
+    cursor: pointer;
+    
+}
+
+#results-container {
+    text-align: center;
+    margin: 10px auto;
+}
