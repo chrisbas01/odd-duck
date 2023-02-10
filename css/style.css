@@ -2,6 +2,8 @@ body {
     background-color: #a4dcf4;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    
+    
 }
 
 header {
@@ -47,24 +49,33 @@ header h1 {
 }
 
 .products-displayed:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 80px 63px -60px #132A13;
+    box-shadow: 0 80px 63px -60px #180944;
+    animation: bounce .8s infinite alternate;
+    transition: 1.6em;
 }
+
 
 .products-displayed:active {
-    transform: translateY(5px);
+   animation: translateY(5px);
     box-shadow: 0 40px 63px -60px #132A13;
+
 }
 
+@keyframes bounce {
+    to {
+        transform: scale(1.4);
+    }
+}
 #button-container {
     margin: 100px auto;
     text-align: center;
 }
 
 #button-container button {
-   display: inline-block;
-   margin-right: 50px;
-   margin-left: 50px;
+   display: block;
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 50px;
     padding: 8px;
     border-radius: 5px;
     border-color: #04186f;
